@@ -3,7 +3,7 @@ WebJars Classic
 
 This is the configuration repository for Classic WebJars. Classic WebJars are created from GitHub releases or NPM packages.
 
-For more information about WebJars visit the website: http://www.webjars.org
+For more information about WebJars visit the website: https://www.webjars.org
 
 
 ## Format
@@ -12,13 +12,13 @@ Each WebJar is defined by a `.properties` file. There are two types of configura
 
 ### GitHub-based WebJars
 
-| Field | Required | Description |
-|-------|----------|-------------|
-| `name` | Yes | Display name of the WebJar |
-| `repo` | Yes | GitHub repository in `owner/repo` format |
-| `download` | No | Custom download URL (supports `${version}` placeholder). If not specified, uses GitHub release archives. |
-| `base.dir` | No | Base directory within the archive to extract (e.g., `*/dist`, `package/build/`) |
-| `requirejs.main` | No | Main file for RequireJS configuration |
+| Field            | Required | Description                                                                                              |
+|------------------|----------|----------------------------------------------------------------------------------------------------------|
+| `name`           | Yes      | Display name of the WebJar                                                                               |
+| `repo`           | Yes      | GitHub repository in `owner/repo` format                                                                 |
+| `download`       | No       | Custom download URL (supports `${version}` placeholder). If not specified, uses GitHub release archives. |
+| `base.dir`       | No       | Base directory within the archive to extract (e.g., `*/dist`, `package/build/`)                          |
+| `requirejs.main` | No       | Main file for RequireJS configuration                                                                    |
 
 Example:
 ```properties
@@ -38,11 +38,11 @@ base.dir=package/build/
 
 ### NPM-based WebJars
 
-| Field | Required | Description |
-|-------|----------|-------------|
-| `npm` | Yes | NPM package name |
-| `license.name` | No | License name (if not auto-detected) |
-| `license.url` | No | License URL |
+| Field          | Required | Description                         |
+|----------------|----------|-------------------------------------|
+| `npm`          | Yes      | NPM package name                    |
+| `license.name` | No       | License name (if not auto-detected) |
+| `license.url`  | No       | License URL                         |
 
 Example:
 ```properties
