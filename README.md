@@ -19,6 +19,8 @@ Each WebJar is defined by a `.properties` file. There are two types of configura
 | `download`       | No       | Custom download URL (supports `${version}` placeholder). If not specified, uses GitHub release archives. |
 | `base.dir`       | No       | Base directory within the archive to extract (e.g., `*/dist`, `package/build/`)                          |
 | `requirejs.main` | No       | Main file for RequireJS configuration                                                                    |
+| `license.name`   | No       | License name override. Use this when GitHub's License API can't classify the project's LICENSE file (e.g. it returns `NOASSERTION`) and you need to publish a specific license name in the POM. |
+| `license.url`    | No       | License URL override. Pairs with `license.name`; either or both may be set.                              |
 
 Example:
 ```properties
