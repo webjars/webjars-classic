@@ -40,17 +40,27 @@ base.dir=package/build/
 
 ### NPM-based WebJars
 
-| Field          | Required | Description                         |
-|----------------|----------|-------------------------------------|
-| `npm`          | Yes      | NPM package name                    |
-| `license.name` | No       | License name (if not auto-detected) |
-| `license.url`  | No       | License URL                         |
+| Field          | Required | Description                                                                                                                                                                  |
+|----------------|----------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `npm`          | Yes      | NPM package name                                                                                                                                                             |
+| `repo`         | No       | GitHub repository in `owner/repo` format. Use this when the published `package.json` lacks a `repository` field (or when its NPM scope name doesn't match the GitHub org) so the POM gets the correct source URL instead of a 404. |
+| `base.dir`     | No       | Base directory within the NPM tarball to extract (e.g. `*/dist`). Defaults to `*/` (the whole tarball minus the top-level `package/` directory).                              |
+| `license.name` | No       | License name (if not auto-detected)                                                                                                                                          |
+| `license.url`  | No       | License URL                                                                                                                                                                  |
 
 Example:
 ```properties
 npm=some-npm-package
 license.name=MIT
 license.url=https://opensource.org/licenses/MIT
+```
+
+Example with `repo` and `base.dir` overrides (used when the package.json
+omits a `repository` field and only the `dist/` directory is wanted):
+```properties
+npm=@tabby_ai/hijri-converter
+repo=tabby-ai/hijri-converter
+base.dir=*/dist
 ```
 
 
